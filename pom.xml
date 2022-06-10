@@ -107,7 +107,7 @@
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository</name>
 	      <url>http://3.111.30.249:9980/omgupta/repository/walmart-snapshot/</url>
-	     </snapshotRepository>
+	     </snapshotrepository>
 	    
 	</distributionManagement>
 	
