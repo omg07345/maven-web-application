@@ -9,6 +9,9 @@ echo "job name is: ${env.JOB_NAME}"
 echo "node name is: ${env.NODE_NAME}"
 echo "Build number is: ${env.BUILD_NUMBER}"
 
+try{
+sendslacknotification('STARTED')
+
 stage('CheckoutCode')
 {
 git branch: 'development', credentialsId: '0d02a882-4ce2-48e4-8c5f-29b881398653', url: 'https://github.com/omg07345/maven-web-application.git'
@@ -42,13 +45,13 @@ currentBuild.result="FAILED"
 throw e
 }
 finally{
-sendslacknotification
+sendSlackNotification(currentBuild.result)
 }
 }//Node Closing
 
 //below code for slack notification
 
-def sendslacknotification(String buildStatus = 'STARTED') {
+def sendSlackNotification(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
