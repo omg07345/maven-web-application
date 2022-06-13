@@ -4,9 +4,9 @@ def mavenHome = tool name: "maven3.8.4"
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 
-echo "job name is: " ${env.JOB_NAME}
-echo "node name is: " ${env.NODE_NAME}
-Eecho "Build number is: "${env.BUILD_NUMBER}
+echo "job name is: ${env.JOB_NAME}"
+echo "node name is: ${env.NODE_NAME}"
+echo "Build number is: ${env.BUILD_NUMBER}"
 
 stage('CheckoutCode')
 {
