@@ -20,10 +20,9 @@ git branch: 'development', credentialsId: '0d02a882-4ce2-48e4-8c5f-29b881398653'
 stage('Build')
 {
 sh "${mavenHome}/bin/mvn clean package"
-
+}
 stage('TriggerDownstreamJob'){
 build job: 'pipelinebuildwithparameters'
-}
 }
 
 /*
