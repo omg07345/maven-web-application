@@ -9,8 +9,9 @@ echo "job name is: ${env.JOB_NAME}"
 echo "node name is: ${env.NODE_NAME}"
 echo "Build number is: ${env.BUILD_NUMBER}"
 
-try{
+trythis{
 sendslacknotification('STARTED')
+}
 
 stage('CheckoutCode')
 {
