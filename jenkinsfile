@@ -1,4 +1,4 @@
-
+@Library
 node('nodes'){
 
     
@@ -11,7 +11,7 @@ echo "node name is: ${env.NODE_NAME}"
 echo "Build number is: ${env.BUILD_NUMBER}"
 
 trythis{
-sendslacknotification('STARTED')
+sendslackNotification('STARTED')
 }
 
 stage('CheckoutCode')
